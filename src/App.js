@@ -1,33 +1,22 @@
 import React from 'react';
 import './App.css';
 import axios from 'axios';
+import { useState } from 'react';
 
 const baseUrl = "https://reqres.in/api/users/1"
 
-class App extends React.Component {
+export default function App() {
 
-  constructor(props) {
-    super(props)
+  const [picture, setPicture] = useState("");
 
-    axios.get(baseUrl).then((server_response) => {
-      console.log(server_response.data.data.avatar);
-      this.setState({ picture: server_response.data.data.avatar })
-    })
+  axios.get(baseUrl).then((server_response) => {
+    console.log(server_response.data.data.avatar);
+    setPicture(server_response.data.data.avatar);
+  });
 
-    this.state = {
-      picture: ""
-    }
-    //All custom functions binds will be here
-  }
-
-  render() {
-    return (
-
-      <div>
-        <header><h1>HEADER</h1></header>
-        <img className="avatar_img" src={this.state.picture} />
-      </div>)
-  }
+  return (
+    <div>
+      <header><h1>HEADER</h1></header>
+      <img className="avatar_img" src={picture} />
+    </div>)
 }
-
-export default App;
