@@ -1,12 +1,39 @@
 header {
-  background-color: FFFFFF;
-  color: 4D4D4D;
+  background-color: white;
+  color: #4D4D4D;
   text-align: center;
   padding: 50px;
+  border: 4px;
+  border-color: black;
 }
 
 .avatar_img {
   max-width: 100%;
   height: auto;
   margin: 20px;
+}
+
+.user-img {
+  width: 100px;
+  height: auto;
+}
+
+.container-users {
+  background-color: #F5F7FA;
+  padding: 20px;
+  margin: 20px;
+  border: 1px;
+  border-style: solid;
+}
+
+.users {
+  background-color: aqua;
+  padding: 20px;
+  border-style: dotted;
+  margin: 10px;
+}
+
+footer {
+  background-color: #263238;
+  color: #F5F7FA;
 }

@@ -1,22 +1,37 @@
 import React from 'react';
 import './App.css';
 import axios from 'axios';
-import { useState } from 'react';
+import Users from './components/Users';
+import { useState, useEffect } from 'react';
 
-const baseUrl = "https://reqres.in/api/users/1"
+const baseUrl = "https://api.github.com/users?"
 
 export default function App() {
 
-  const [picture, setPicture] = useState("");
+  const [users, setUsers] = useState([]);
 
-  axios.get(baseUrl).then((server_response) => {
-    console.log(server_response.data.data.avatar);
-    setPicture(server_response.data.data.avatar);
-  });
+  useEffect(() => {
+    getUser();
+  }, []);
+
+  async function getUser() {
+    try {
+      const response = await axios.get(baseUrl);
+      console.log(response.data);
+      setUsers(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
   return (
     <div>
       <header><h1>HEADER</h1></header>
-      <img className="avatar_img" src={picture} />
+
+      <div>
+        <Users users={users} />
+      </div>
+
+      <footer><h1>FOOTER</h1></footer>
     </div>)
 }
