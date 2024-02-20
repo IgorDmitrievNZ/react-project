@@ -1,0 +1,11 @@
+.user-img {
+    width: 100px;
+    height: auto;
+}
+
+.users {
+    background-color: aqua;
+    padding: 20px;
+    border-style: dotted;
+    margin: 10px;
+}

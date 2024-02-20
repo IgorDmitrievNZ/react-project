@@ -1,8 +1,10 @@
 import React from 'react';
 import './App.css';
 import axios from 'axios';
-import Users from './components/Users';
+import Users from './components/users/Users';
 import { useState, useEffect } from 'react';
+import Footer from './components/footer/Footer';
+import Header from './components/header/Header';
 
 const baseUrl = "https://api.github.com/users?"
 
@@ -26,12 +28,12 @@ export default function App() {
 
   return (
     <div>
-      <header><h1>HEADER</h1></header>
+      <header><Header /></header>
 
       <div>
         <Users users={users} />
       </div>
 
-      <footer><h1>FOOTER</h1></footer>
+      <footer><Footer /></footer>
     </div>)
 }

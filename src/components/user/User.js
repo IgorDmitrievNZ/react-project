@@ -1,3 +1,5 @@
+import '../user/User.css';
+
 export default function User({ user }) {
     return (
         <div className="users" >

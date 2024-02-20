@@ -1,4 +1,5 @@
-import User from "./User";
+import User from "../user/User";
+import '../users/Users.css';
 
 export default function Users({ users }) {
 
