@@ -8,4 +8,11 @@
     padding: 20px;
     border-style: dotted;
     margin: 10px;
+    cursor: pointer;
+    transition: transform 500ms ease;
+}
+
+.users:hover {
+    transform: scale(1.02);
+    opacity: 0.5;
 }

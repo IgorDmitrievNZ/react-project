@@ -3,6 +3,8 @@ import './App.css';
 import axios from 'axios';
 import Users from './components/users/Users';
 import { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import UserDetails from './components/user-details/UserDetails';
 import Footer from './components/footer/Footer';
 import Header from './components/header/Header';
 
@@ -30,9 +32,14 @@ export default function App() {
     <div>
       <header><Header /></header>
 
-      <div>
+      {/* <div>
         <Users users={users} />
-      </div>
+      </div> */}
+
+      <Routes>
+        <Route path="/" element={<Users users={users} />} />
+        <Route path="/details" element={<UserDetails />} />
+      </Routes>
 
       <footer><Footer /></footer>
     </div>)
