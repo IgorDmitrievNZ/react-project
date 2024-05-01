@@ -1,17 +1,15 @@
-import React from 'react';
-import './App.css';
-import axios from 'axios';
-import Users from './components/users/Users';
-import { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
-import UserDetails from './components/user-details/UserDetails';
-import Footer from './components/footer/Footer';
-import Header from './components/header/Header';
+import React from "react";
+import "./App.css";
+import axios from "axios";
+import Users from "./components/users/Users";
+import { useState, useEffect } from "react";
+import { Route, Routes } from "react-router-dom";
+import UserDetails from "./components/user-details/UserDetails";
+import Error from "./pages/error";
 
-const baseUrl = "https://api.github.com/users?"
+const baseUrl = "https://api.github.com/users?";
 
 export default function App() {
-
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
@@ -29,18 +27,12 @@ export default function App() {
   }
 
   return (
-    <div>
-      <header><Header /></header>
-
-      {/* <div>
-        <Users users={users} />
-      </div> */}
-
+    <>
       <Routes>
         <Route path="/" element={<Users users={users} />} />
-        <Route path="/details" element={<UserDetails />} />
+        <Route path="/details/:login" element={<UserDetails />} />
+        <Route path="*" element={<Error />} />
       </Routes>
-
-      <footer><Footer /></footer>
-    </div>)
+    </>
+  );
 }

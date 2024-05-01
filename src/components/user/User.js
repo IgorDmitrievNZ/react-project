@@ -1,15 +1,14 @@
-import '../user/User.css';
-import { Routes, Route, Link } from 'react-router-dom';
-import UserDetails from '../user-details/UserDetails';
+import "../user/User.css";
+import { Link } from "react-router-dom";
 
-export default function User({ user }) {
-
-    return (
-        <Link to="/details">
-            <div className="users"  >
-                <h3>{user.login}</h3>
-                <img className="user-img" src={user.avatar_url} />
-            </div>
-        </Link>
-    );
-}
+const User = ({ user }) => {
+  return (
+    <Link className="users-link" to={`/details/${user.login}`}>
+      <div className="users">
+        <h3>{user.login}</h3>
+        <img className="user-img" alt="user's avatar" src={user.avatar_url} />
+      </div>
+    </Link>
+  );
+};
+export default User;

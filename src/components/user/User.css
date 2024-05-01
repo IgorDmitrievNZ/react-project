@@ -16,3 +16,19 @@
     transform: scale(1.02);
     opacity: 0.5;
 }
+
+.users-link:link {
+    text-decoration: none;
+}
+
+.users-link:visited {
+    text-decoration: none;
+}
+
+.users-link:hover {
+    text-decoration: none;
+}
+
+.users-link:active {
+    text-decoration: none;
+}
