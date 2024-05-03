@@ -1,7 +1,21 @@
 .container-users {
-  background-color: #F5F7FA;
+  background-color: white;
   padding: 20px;
   margin: 20px;
   border: 1px;
   border-style: solid;
+}
+
+.input-users {
+  height: 50px;
+  width: 300px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  font-size: 17px;
+}
+
+.searchButton {
+  height: 50px;
+  margin-left: 5px;
+  padding: 5px;
 }
