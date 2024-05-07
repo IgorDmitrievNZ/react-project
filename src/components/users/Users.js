@@ -5,7 +5,6 @@ import { useState } from "react";
 
 const Users = ({ users }) => {
   const [userInput, setUserInput] = useState("");
-  console.log(userInput);
 
   const search = () => console.log("Great Shot!");
 
@@ -17,7 +16,10 @@ const Users = ({ users }) => {
             type="text"
             value={userInput}
             placeholder="Enter user's login: "
-            onChange={(e) => setUserInput(e.target.value)}
+            onChange={(e) => {
+              setUserInput(e.target.value);
+              console.log("users log: " + userInput);
+            }}
             className="input-users"
           />
           <button type="button" onClick={search} className="searchButton">

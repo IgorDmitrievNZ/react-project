@@ -1,17 +1,18 @@
 import { useParams } from "react-router-dom";
 import { withLayout } from "../../hocs/with-layout";
-import { BaseURL } from "../../model/data";
+import { BaseURL } from "../../consts/consts";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
 const UserDetails = () => {
   const { login } = useParams();
   const userDetailsUrl = `${BaseURL}/users/${login}`;
-  const [details, setDetails] = useState([]);
+  const [details, setDetails] = useState("");
   console.log("details" + details);
 
   useEffect(() => {
     getDetails();
+    console.log("userDeatails responce OK");
   }, []);
 
   async function getDetails() {
