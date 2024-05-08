@@ -1,8 +1,9 @@
 header {
-    background-color: #F5F7FA;
-    color: #4D4D4D;
-    text-align: center;
-    padding: 50px;
-    border: 4px;
-    border-color: black;
-  }
+  background-color: #F5F7FA;
+  color: #4D4D4D;
+  text-align: center;
+  padding: 50px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}

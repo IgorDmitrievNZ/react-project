@@ -28,9 +28,12 @@ const Users = ({ users }) => {
         </form>
 
         <h1> Githab Users </h1>
-        {users.map((element) => (
-          <User key={element.id} user={element} />
-        ))}
+
+        <div className="container">
+          {users.map((element) => (
+            <User key={element.id} user={element} />
+          ))}
+        </div>
       </div>
     );
   } else {

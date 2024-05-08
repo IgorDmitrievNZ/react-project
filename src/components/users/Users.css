@@ -6,6 +6,12 @@
   border-style: solid;
 }
 
+.container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  width: 50%;
+}
+
 .input-users {
   height: 50px;
   width: 300px;
