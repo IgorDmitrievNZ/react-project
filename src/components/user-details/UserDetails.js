@@ -3,6 +3,7 @@ import { withLayout } from "../../hocs/with-layout";
 import { BaseURL } from "../../consts/consts";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import "../user-details/UserDetail.css";
 
 const UserDetails = () => {
   const { login } = useParams();
@@ -29,7 +30,7 @@ const UserDetails = () => {
   console.log("user login log" + { login });
 
   return (
-    <div>
+    <div className="user_details">
       <h1>login: {details.login}</h1>
       {details.name && <h2>name: {details.name}</h2>}
       {details.location && <h3>location: {details.location}</h3>}
